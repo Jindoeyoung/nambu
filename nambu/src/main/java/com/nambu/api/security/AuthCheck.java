@@ -1,14 +1,14 @@
 package com.nambu.api.security;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
 
 import com.google.gson.JsonObject;
 import com.nambu.api.util.Utils;
 
 public class AuthCheck {
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+//	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 //	@Autowired
 //	private SignVerifier signverifier;
