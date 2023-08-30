@@ -20,24 +20,36 @@ public class UHJ01Controller {
 
 	private final UHJ01Service uhj01Service;
 
+    //============================================================
+    //< SELECT
+    //============================================================
 	@PostMapping("")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	public String getUser(@RequestBody StHakJeokM _hakjeokm) throws Exception {
 		return uhj01Service.getStudentList(_hakjeokm);
 	}
 
+    //============================================================
+    //< INSERT
+    //============================================================
 	@PostMapping("/insert")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	public int insertUser(@RequestBody StHakJeokM _hakjeokm) throws Exception {
 		return uhj01Service.insertStudent(_hakjeokm);
 	}
 
+    //============================================================
+    //< UPDATE
+    //============================================================
 	@PutMapping("")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	public int updatetUser(@RequestBody StHakJeokM _hakjeokm) throws Exception {
 		return uhj01Service.updateStudent(_hakjeokm);
 	}
 
+    //============================================================
+    //< DELETE
+    //============================================================
 	@DeleteMapping("")
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	public int deletetUser(@RequestBody StHakJeokM _hakjeokm) throws Exception {

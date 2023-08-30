@@ -25,6 +25,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 	private UHJ01Mapper uhj01Mapper;
 	AuthCheck authcheck = new AuthCheck();
 
+    //============================================================
+    //< SELECT
+    //============================================================
 	@Override
 	public String getStudentList(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception {
 	    //============================================================
@@ -36,6 +39,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 
 		List<StHakJeokM> datas = uhj01Mapper.getStudentList(hakjeokm);
 
+        //============================================================
+        //< json 포맷 데이터 생성
+        //============================================================		
 		JsonObject dataResult = new JsonObject();
 		JsonArray jsonArr1 = new JsonArray();
 		String Message = "SUCCESS";
@@ -73,6 +79,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 	}
 
 
+    //============================================================
+    //< INSERT
+    //============================================================
 	@Override
 	public int insertStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception {
 		try {
@@ -91,6 +100,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 		return 0;
 	}
 
+    //============================================================
+    //< UPDATE
+    //============================================================	
 	@Override
 	public int updateStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) {
 		try {
@@ -109,6 +121,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 		return 0;
 	}
 
+    //============================================================
+    //< DELETE
+    //============================================================	
 	@Override
 	public int deleteStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) {
 		try {
