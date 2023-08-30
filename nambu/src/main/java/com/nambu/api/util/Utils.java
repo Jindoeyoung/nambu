@@ -2,6 +2,12 @@ package com.nambu.api.util;
 
 import com.google.gson.JsonObject;
 
+/**
+ * <p>Util</p>
+ * <ul>
+ * 	<li>공통 function을 구현하여 사용</li>
+ * </ul> 
+ */
 public class Utils {
 	public JsonObject getMetaErrGenerator(Integer responseCode, String type) throws Exception {
 

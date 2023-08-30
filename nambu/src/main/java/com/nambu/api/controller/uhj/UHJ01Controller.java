@@ -13,6 +13,9 @@ import com.nambu.api.service.uhj.UHJ01Service;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * <p>Controller</p>
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/uhj/uhj01", produces = "application/json; charset=utf8")

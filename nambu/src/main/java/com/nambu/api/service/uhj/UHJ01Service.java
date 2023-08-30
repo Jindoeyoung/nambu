@@ -4,6 +4,9 @@ import org.apache.ibatis.annotations.Param;
 
 import com.nambu.api.entity.uhj.StHakJeokM;
 
+/**
+ * <p>Service</p>
+ */
 public interface UHJ01Service {
 	
     //============================================================

@@ -7,6 +7,9 @@ import org.apache.ibatis.annotations.Param;
 
 import com.nambu.api.entity.uhj.StHakJeokM;
 
+/**
+ * <p>Mapper</p>
+ */
 @Mapper
 public interface UHJ01Mapper {
 	

@@ -16,6 +16,13 @@ import com.nambu.api.security.AuthCheck;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * <p>ServiceImpl</p>
+ * <ul>
+ * 	<li>Service 에 정의된 interface 를 상속받아 사용</li>
+ * 	<li>각 서비스 로직 구현</li>
+ * </ul> 
+ */
 @Service
 @RequiredArgsConstructor
 public class UHJ01ServiceImpl implements UHJ01Service {
