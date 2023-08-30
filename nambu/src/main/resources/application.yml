@@ -60,4 +60,4 @@ logging:
 # Sql
 #=======================================================
 mybatis:
-  mapper-locations: mappers/uhj/*.xml # 학사(U)-학적관리(HJ) 쿼리 참조 위치
+  mapper-locations: mappers/**/*.xml
