@@ -28,13 +28,13 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 내부 접속 사용
-#    url: jdbc:mysql://10.1.193.1:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
-#    username: dev
-#    password: Mysql1234%
-    # 외부 접속 사용
-    url: jdbc:mysql://221.133.61.193:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    url: jdbc:mysql://10.1.193.1:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
     username: dev
     password: Mysql1234%
+    # 외부 접속 사용
+#    url: jdbc:mysql://221.133.61.193:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+#    username: dev
+#    password: Mysql1234%
     # 로컬 DB 접속 사용
 #    url: jdbc:mysql://localhost:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
 #    username: spk
