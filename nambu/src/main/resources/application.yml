@@ -1,0 +1,60 @@
+#=======================================================
+# Server
+#=======================================================
+server:
+  port: 8443
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  tomcat:
+    basedir: .
+    accesslog:
+      directory: /LOGS/nambu
+      enabled: true
+      file-date-format: .yyyyMMdd
+      max-days: 30
+      pattern: '|%h|%l|%u|%t|"%r"|status code:%s|%b bytes|%D ms|'
+      prefix: access
+      rotate: true
+      suffix: .log
+      
+#=======================================================
+# MySQL
+#=======================================================    
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.1.193.1:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: dev
+    password: Mysql1234%
+#    url: jdbc:mysql://221.133.61.193:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+#    username: dev
+#    password: Mysql1234%
+#    url: jdbc:mysql://localhost:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+#    username: spk
+#    password: spk1234%
+
+    
+#=======================================================
+# Security
+#=======================================================
+api-key: eW5hIGRvd25sb2FkIHNlcnZlciBzZWNlcnQga2V5IGF1dGg=
+secret-key: eW5hIGRvd25sb2FkIHNlcnZlciByZXN0IGFwaSBjYWxsIC0gY29udGVudHMgZG93bmxvYWQgZXhjdXRlLiA=  
+signature-algorithm: HmacSHA256    
+
+#=======================================================
+# logging
+#=======================================================
+logging:
+  level:
+    root: DEBUG # INFO DEBUG
+    '[com.nambu.api]': DEBUG
+
+#=======================================================
+# Sql
+#=======================================================
+mybatis:
+  mapper-locations: mappers/uhj/*.xml

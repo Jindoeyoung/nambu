@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nambu.api.mapper.uhj.UHJ01Mapper">
+
+    <select id="getStudentList" resultType="com.nambu.api.entity.uhj.StHakJeokM">
+        SELECT * FROM ST_HAKJEOK_M_TEST 
+        WHERE HAKBEON LIKE CONCAT('%', #{ST_HAKJEOK_M.hakbeon}, '%')
+    </select>
+
+    <insert id="insertStudent" parameterType="com.nambu.api.entity.uhj.StHakJeokM">
+        INSERT INTO ST_HAKJEOK_M_TEST (hakbeon, h_name, iphak_juya) VALUES (#{ST_HAKJEOK_M.hakbeon}, #{ST_HAKJEOK_M.h_name}, #{ST_HAKJEOK_M.iphak_juya}) 
+    </insert>
+
+    <update id="updateStudent" parameterType="com.nambu.api.entity.uhj.StHakJeokM">
+        UPDATE ST_HAKJEOK_M_TEST SET iphak_juya = #{ST_HAKJEOK_M.iphak_juya} 
+        WHERE hakbeon = #{ST_HAKJEOK_M.hakbeon}
+    </update>
+
+    <delete id="deleteStudent" parameterType="com.nambu.api.entity.uhj.StHakJeokM">
+        DELETE FROM ST_HAKJEOK_M_TEST 
+        WHERE HAKBEON = #{ST_HAKJEOK_M.hakbeon}
+    </delete>
+
+</mapper>
