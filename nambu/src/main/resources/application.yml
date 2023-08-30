@@ -27,12 +27,15 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.1.193.1:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
-    username: dev
-    password: Mysql1234%
-#    url: jdbc:mysql://221.133.61.193:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    # 내부 접속 사용
+#    url: jdbc:mysql://10.1.193.1:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
 #    username: dev
 #    password: Mysql1234%
+    # 외부 접속 사용
+    url: jdbc:mysql://221.133.61.193:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
+    username: dev
+    password: Mysql1234%
+    # 로컬 DB 접속 사용
 #    url: jdbc:mysql://localhost:3306/spike?serverTimezone=Asia/Seoul&characterEncoding=utf8
 #    username: spk
 #    password: spk1234%
@@ -50,11 +53,11 @@ signature-algorithm: HmacSHA256
 #=======================================================
 logging:
   level:
-    root: DEBUG # INFO DEBUG
-    '[com.nambu.api]': DEBUG
+    root: INFO #TRACE DEBUG INFO WARN ERROR (전체레벨 로깅 지정)
+    '[com.nambu.api]': DEBUG #TRACE DEBUG INFO WARN ERROR (패키지별 로깅 지정) 
 
 #=======================================================
 # Sql
 #=======================================================
 mybatis:
-  mapper-locations: mappers/uhj/*.xml
+  mapper-locations: mappers/uhj/*.xml # 학사(U)-학적관리(HJ) 쿼리 참조 위치
