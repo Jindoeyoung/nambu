@@ -23,12 +23,10 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 
 	@Autowired
 	private UHJ01Mapper uhj01Mapper;
-
 	AuthCheck authcheck = new AuthCheck();
 
 	@Override
 	public String getStudentList(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception {
-
 	    //============================================================
 	    //< api-key check
 	    //============================================================
@@ -40,15 +38,13 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 
 		JsonObject dataResult = new JsonObject();
 		JsonArray jsonArr1 = new JsonArray();
-
 		String Message = "SUCCESS";
+		String Success = "1";
+		
 		dataResult.addProperty("reason", Message);
-		dataResult.addProperty("result", "1");
-
-
+		dataResult.addProperty("result", Success);
 
 		if (datas.size() > 0) {
-
 			for (StHakJeokM item : datas) {
 
 				JsonObject Obj1 = new JsonObject();
@@ -68,10 +64,8 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 				Obj2.add("result", jsonArr1);
 				dataResult.add("data", Obj2);
 			}
-
 		} else {
 			JsonObject Obj3 = new JsonObject();
-
 			Obj3.add("result", jsonArr1);
 			dataResult.add("data", Obj3);
 		}
@@ -83,6 +77,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 	public int insertStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception {
 		try {
 			if (!authcheck.getMetaAuthErrGenerator(hakjeokm.getApikey()).equals("{}")) {
+			    //============================================================
+			    //< api-key check
+			    //============================================================				
 				logger.info("[UHJ01ServiceImpl][insertStudent] AUTHENTICATION RESTRICTIONS");
 			} else {
 				return uhj01Mapper.insertStudent(hakjeokm);
@@ -98,6 +95,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 	public int updateStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) {
 		try {
 			if (!authcheck.getMetaAuthErrGenerator(hakjeokm.getApikey()).equals("{}")) {
+			    //============================================================
+			    //< api-key check
+			    //============================================================				
 				logger.info("[UHJ01ServiceImpl][updateStudent] AUTHENTICATION RESTRICTIONS");
 			} else {
 				return uhj01Mapper.updateStudent(hakjeokm);
@@ -113,6 +113,9 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 	public int deleteStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) {
 		try {
 			if (!authcheck.getMetaAuthErrGenerator(hakjeokm.getApikey()).equals("{}")) {
+			    //============================================================
+			    //< api-key check
+			    //============================================================				
 				logger.info("[UHJ01ServiceImpl][deleteStudent] AUTHENTICATION RESTRICTIONS");
 			} else {
 				return uhj01Mapper.deleteStudent(hakjeokm);
