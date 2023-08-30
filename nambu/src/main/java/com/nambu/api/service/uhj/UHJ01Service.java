@@ -6,7 +6,6 @@ import com.nambu.api.entity.uhj.StHakJeokM;
 
 public interface UHJ01Service {
 	public String getStudentList(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception;
-//	public List<StHakJeokM> getStudentList(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm);
 
 	public int insertStudent(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception;
 

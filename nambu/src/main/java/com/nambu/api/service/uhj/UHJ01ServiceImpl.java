@@ -23,13 +23,8 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 
 	@Autowired
 	private UHJ01Mapper uhj01Mapper;
-//	private final UHJ01Mapper uhj01Mapper;
 
 	AuthCheck authcheck = new AuthCheck();
-//	@Autowired(required=false)
-//	private AuthCheck authcheck;
-//	@Autowired
-//	private final AuthCheck authcheck;
 
 	@Override
 	public String getStudentList(@Param("ST_HAKJEOK_M") StHakJeokM hakjeokm) throws Exception {
@@ -55,7 +50,6 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 		if (datas.size() > 0) {
 
 			for (StHakJeokM item : datas) {
-//			System.out.println("item==>"+item);
 
 				JsonObject Obj1 = new JsonObject();
 				JsonObject Obj2 = new JsonObject();
@@ -76,17 +70,12 @@ public class UHJ01ServiceImpl implements UHJ01Service {
 			}
 
 		} else {
-
 			JsonObject Obj3 = new JsonObject();
 
 			Obj3.add("result", jsonArr1);
 			dataResult.add("data", Obj3);
-
-//			dataResult.addProperty("data", "");
 		}
-
 		return dataResult.toString();
-//		return uhj01Mapper.getStudentList(hakjeokm).toString();
 	}
 
 
